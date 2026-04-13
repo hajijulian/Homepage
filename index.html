@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive Buttons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Developer Text -->
+    <div class="developer-text">DEVELOPED BY: HAJI A. JULIAN</div>
+    
+    <!-- Login Button -->
+    <button class="login-btn" id="loginBtn" type="button">LOGIN</button>
+    
+    <!-- Add New Button (shown when logged in) -->
+    <button class="add-new-btn" id="addNewBtn" type="button" style="display: none;">ADD NEW BUTTON</button>
+    
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-modal-content">
+            <span class="login-close" id="loginClose">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                <div class="form-error" id="loginError"></div>
+                <button type="submit" class="login-submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Add New Button Modal -->
+    <div class="add-button-modal" id="addButtonModal">
+        <div class="add-button-modal-content">
+            <span class="add-button-close" id="addButtonClose">&times;</span>
+            <h2>Add New Button</h2>
+            <form id="addButtonForm">
+                <div class="form-group">
+                    <label for="buttonName">Button Name:</label>
+                    <input type="text" id="buttonName" name="buttonName" required placeholder="e.g., Contact">
+                </div>
+                <div class="form-group">
+                    <label for="buttonLink">Link URL:</label>
+                    <input type="url" id="buttonLink" name="buttonLink" required placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="buttonIcon">Icon (SVG or Image):</label>
+                    <input type="file" id="buttonIcon" name="buttonIcon" accept="image/*,.svg">
+                    <small style="color: #999; font-size: 12px; margin-top: 4px; display: block;">Upload an icon image or SVG file</small>
+                </div>
+                <div class="form-error" id="addButtonError"></div>
+                <button type="submit" class="add-button-submit-btn">Add Button</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Edit Button Modal -->
+    <div class="add-button-modal" id="editButtonModal">
+        <div class="add-button-modal-content">
+            <span class="add-button-close" id="editButtonClose">&times;</span>
+            <h2>Edit Button</h2>
+            <form id="editButtonForm">
+                <input type="hidden" id="editButtonId" name="editButtonId">
+                <div class="form-group">
+                    <label for="editButtonName">Button Name:</label>
+                    <input type="text" id="editButtonName" name="editButtonName" required placeholder="e.g., Contact">
+                </div>
+                <div class="form-group">
+                    <label for="editButtonLink">Link URL:</label>
+                    <input type="url" id="editButtonLink" name="editButtonLink" required placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="editButtonColor">Button Color:</label>
+                    <input type="color" id="editButtonColor" name="editButtonColor" value="#0a0a0a">
+                    <small style="color: #999; font-size: 12px; margin-top: 4px; display: block;">Choose the inner fill color of the button</small>
+                </div>
+                <div class="form-group">
+                    <label for="editButtonIcon">Icon (SVG or Image):</label>
+                    <input type="file" id="editButtonIcon" name="editButtonIcon" accept="image/*,.svg">
+                    <small style="color: #999; font-size: 12px; margin-top: 4px; display: block;">Upload a new icon image or SVG file (leave empty to keep current)</small>
+                </div>
+                <div class="form-error" id="editButtonError"></div>
+                <button type="submit" class="add-button-submit-btn">Update Button</button>
+            </form>
+        </div>
+    </div>
+    
+    <main class="page">
+        <section class="actions" aria-label="Quick actions" id="actionsContainer">
+            <!-- Buttons will be dynamically generated here -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <noscript>JavaScript is required for the background-dim effect.</noscript>
+</body>
+</html>
